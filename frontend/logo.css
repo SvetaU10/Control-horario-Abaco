@@ -1,0 +1,89 @@
+.brand-logo {
+    display: grid;
+    width: 40px;
+    height: 40px;
+    flex: 0 0 auto;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
+    place-items: center;
+}
+
+.brand-logo--lg {
+    width: 48px;
+    height: 48px;
+}
+
+.logo-svg,
+.logo-custom {
+    width: 78%;
+    height: 78%;
+    overflow: visible;
+}
+
+.logo-custom {
+    object-fit: contain;
+}
+
+.brand-logo--custom {
+    background: transparent;
+    box-shadow: none;
+}
+
+.logo-ring {
+    fill: none;
+    stroke: url(#logoGrad);
+    stroke-width: 2.2;
+    stroke-linecap: round;
+    transform-origin: 24px 24px;
+    animation: logo-ring-spin 8s linear infinite;
+}
+
+.logo-face {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.15);
+    stroke-width: 1;
+}
+
+.logo-center {
+    fill: #22d3ee;
+}
+
+.logo-hand {
+    stroke: #f4f6fb;
+    stroke-linecap: round;
+}
+
+.logo-hour {
+    stroke-width: 2.4;
+}
+
+.logo-minute {
+    stroke-width: 1.8;
+}
+
+.logo-second {
+    stroke: #22d3ee;
+    stroke-width: 1.2;
+}
+
+.logo-tick {
+    stroke: rgba(255, 255, 255, 0.22);
+    stroke-width: 1;
+}
+
+@keyframes logo-ring-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .logo-ring {
+        animation: none;
+    }
+}

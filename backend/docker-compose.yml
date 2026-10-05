@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: fichajes_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: mi_password_secreto
+      POSTGRES_DB: fichajes_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/01-init.sql
+      - ./seed.sql:/docker-entrypoint-initdb.d/02-seed.sql
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: fichajes_backend
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - DATABASE_URL=postgresql://postgres:mi_password_secreto@db:5432/fichajes_db
+      - JWT_SECRET=MiClaveSuperSecreta123!
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:
+

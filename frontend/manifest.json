@@ -1,0 +1,20 @@
+{
+    "name": "Abaco Developments - Control horario",
+    "short_name": "Abaco Developments",
+    "description": "Ficha tu jornada laboral desde web o móvil.",
+    "start_url": "./login.html",
+    "scope": "./",
+    "display": "standalone",
+    "orientation": "portrait-primary",
+    "background_color": "#0b1020",
+    "theme_color": "#0b1020",
+    "lang": "es",
+    "icons": [
+        {
+            "src": "icons/icon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any"
+        }
+    ]
+}

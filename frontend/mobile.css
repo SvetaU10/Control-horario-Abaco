@@ -1,0 +1,82 @@
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding:
+        env(safe-area-inset-top)
+        env(safe-area-inset-right)
+        env(safe-area-inset-bottom)
+        env(safe-area-inset-left);
+    -webkit-tap-highlight-color: transparent;
+}
+
+button,
+input,
+a {
+    touch-action: manipulation;
+}
+
+input,
+button,
+.ghost-btn,
+.submit-btn,
+.btn {
+    min-height: 48px;
+}
+
+input,
+select,
+textarea {
+    font-size: 16px;
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .btn:hover,
+    .submit-btn:hover,
+    .ghost-btn:hover {
+        transform: none;
+    }
+
+    .btn:active,
+    .submit-btn:active {
+        opacity: 0.85;
+        transform: scale(0.98);
+    }
+}
+
+@media (max-width: 480px) {
+    .app {
+        width: min(980px, calc(100% - 1rem));
+        padding-bottom: calc(2rem + env(safe-area-inset-bottom));
+    }
+
+    .panel {
+        padding: 1.15rem;
+    }
+
+    .clock {
+        font-size: clamp(2.4rem, 14vw, 3.5rem);
+    }
+
+    .login-app {
+        padding: 1rem;
+        min-height: 100dvh;
+    }
+
+    .login-card {
+        padding: 1.35rem;
+    }
+
+    .login-head {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .login-head h1 {
+        font-size: 1.05rem;
+    }
+}
